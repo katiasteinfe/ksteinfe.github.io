@@ -1,0 +1,67 @@
+/*
+ * Science page styles
+ *
+ * Implements the minimalist black & white visual identity. This file
+ * overrides base styles with a strict monochrome palette and uses
+ * classic serif typography reminiscent of academic journals. Layouts
+ * emphasise white space and simple geometric separators. No shadows
+ * or gradients appear here.
+ */
+
+/* Use Georgia as a serif font for an academic feel */
+body.science-theme {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+header.science-theme {
+  background-color: #ffffff;
+  border-bottom: 1px solid #000000;
+}
+
+.nav-links.science-theme a {
+  color: #000000;
+}
+
+.nav-links.science-theme a:hover {
+  background-color: #f0f0f0;
+}
+
+.science-section {
+  border-top: 1px solid #000000;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.science-section h2 {
+  color: #000000;
+}
+
+.science-section p {
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Publication list */
+.publications {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.publications li {
+  margin-bottom: 0.75rem;
+}
+
+.publications a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+/* Black pins for maps */
+.science-map .leaflet-marker-icon {
+  filter: grayscale(100%) brightness(0%);
+}

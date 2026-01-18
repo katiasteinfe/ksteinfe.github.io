@@ -1,0 +1,56 @@
+/*
+ * Technology page styles
+ *
+ * Implements the Okalo marshmallow aesthetic interpreted from
+ * soft pastel UI themes. Expect rounded corners, pastel hues and
+ * gentle gradients with subtle depth. Sans‑serif typography keeps
+ * things contemporary and approachable. Cards float above a
+ * layered background.
+ */
+
+body.technology-theme {
+  font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+  color: #333333;
+  background: linear-gradient(135deg, #f7eaff 0%, #eaf5ff 100%);
+}
+
+header.technology-theme {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: none;
+}
+
+.nav-links.technology-theme a {
+  color: #333;
+}
+
+.nav-links.technology-theme a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Cards with marshmallow softness */
+.technology-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.technology-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Pastel badges */
+.technology-badge {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 8px;
+  background-color: #efdaf6;
+  color: #6a3386;
+  margin-top: 0.5rem;
+}
+
+/* Soft map markers could be handled via Leaflet CSS overrides if needed */

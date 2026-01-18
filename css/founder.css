@@ -1,0 +1,64 @@
+/*
+ * Founder/Escolhares page styles
+ *
+ * This stylesheet extracts the visual spirit of the Escolhares NGO.
+ * Colours are approximated based on the public site and instagram feed.
+ * Replace the colour codes with exact values once you extract them
+ * from the Canva or official assets. Fonts adopt a friendly sans-serif.
+ */
+
+body.founder-theme {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  color: #00395d; /* dark accent colour */
+  background-color: #f7fafc;
+}
+
+header.founder-theme {
+  background-color: #00a8e8; /* primary Escolhares colour (turquoise) */
+  color: #ffffff;
+  border-bottom: none;
+}
+
+.nav-links.founder-theme a {
+  color: #ffffff;
+}
+
+.nav-links.founder-theme a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Headings coloured with primary accent */
+.founder-section h2 {
+  color: #00a8e8;
+}
+
+/* Metrics display */
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.metric {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  flex: 1 1 200px;
+}
+
+.metric span.number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00a8e8;
+}
+
+.metric span.label {
+  font-size: 0.9rem;
+  color: #00395d;
+}
+
+/* Map marker colours may be set via Leaflet icons */

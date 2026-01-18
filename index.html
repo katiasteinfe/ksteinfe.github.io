@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> To see is to learn | Voir c'est savoir | Ver e saber </title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-aJgTyEUMx2j0FX1DYgcdTQAm5Oxd4Y+NHY5QHlKmO4U8y+3n1wF9PdONpIyRUqJkY4JXVkG5Qsx2jgX9fVDdyQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha512-6ddM8LAtJYy2dCsohlkp4l24DAt4tkEOvFQDymI0pIDaKrO2vhYnTqv+XffBxDdK1rDunwkH8YM8b/dZsR4hRA==" crossorigin=""/>
+  <!-- Base styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- Page-specific styles could be included here if needed -->
+</head>
+<body class="home-page">
+  <header>
+    <div class="container nav-bar">
+      <div class="logo">
+        <strong>Katia Steinfeld</strong>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="science.html">Science</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="founder.html">Founder</a></li>
+      </ul>
+    </div>
+  </header>
+  <main>
+   <main>
+  <!-- Hero Section with Trilingual Motto -->
+  <section class="hero">
+    <div class="container">
+      <div class="motto">
+        <span> Katia Steinfeld | Md-PhD <span>
+        <p class="intro-text">
+        <span> To see is to know | Voir c'est savoir | Ver é saber <span>
+      </div>
+      <p class="intro-text">
+        I have led and sustained international research collaborations across three continents, with extensive experience designing end‑to‑end data pipelines for preprocessing, statistical modeling, and inference. 
+        My research uses myopia as a model system to examine how optical noise propagates through neural processing, shaping perception, decision making, and action.
+        In parallel, I am a founder and innovator, having created and led a Swiss nonprofit organization that has delivered vision care to more than 20,000 children in Brazil over +7 years. 
+        I act as a catalyst for collaboration, bringing together clinicians, engineers, researchers, and students across countries to align scientific rigor with real‑world constraints. 
+        Across academia and global health, I have built and deployed scalable vision‑care technologies, including automated clinical data pipelines, inventory systems, and gamified applications. 
+        Guided by the principle that to see is to learn, I operate across the full spectrum—from basic science to applied innovation, identifying gaps, building solutions, and rigorously translating discovery into scalable, measurable real‑world impact.
+      </p>
+    </div>
+  </section>
+</main>
+    <!-- Featured Work Section -->
+    <section>
+      <div class="container">
+        <h2>Featured Work</h2>
+        <div id="featured-container" class="grid grid-two"></div>
+      </div>
+    </section>
+    
+    <!-- Connect Section -->
+    <section>
+      <div class="container">
+        <h2>Want to connect or have ideas to discuss?</h2>
+        <p>Click the icon that best applies and leave me a message.</p>
+        <div class="connect-icons">
+          <div class="connect-icon" onclick="openContactModal('Global Health')">
+            <i class="fa-solid fa-globe fa-2x" style="color:#007acc;"></i>
+            <span>Global Health</span>
+          </div>
+          <div class="connect-icon" onclick="openContactModal('Science')">
+            <i class="fa-solid fa-brain fa-2x" style="color:#007acc;"></i>
+            <span>Science</span>
+          </div>
+          <div class="connect-icon" onclick="openContactModal('Innovation')">
+            <i class="fa-solid fa-lightbulb fa-2x" style="color:#007acc;"></i>
+            <span>Innovation</span>
+          </div>
+          <div class="connect-icon" onclick="openContactModal('Other')">
+            <i class="fa-solid fa-comments fa-2x" style="color:#007acc;"></i>
+            <span>Other</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>NYC, NY &middot; <a href="mailto:ks7689@nyu.edu">ks7689@nyu.edu</a> &middot; <a href="https://www.linkedin.com/in/katia-steinfeld" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </footer>
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="contact-modal">
+    <div class="modal-content">
+      <button onclick="closeContactModal()" style="float:right; background:none; border:none; font-size:1.2rem;">&times;</button>
+      <h3>Contact Me</h3>
+      <form id="contact-form" action="https://formsubmit.co/ks7689@nyu.edu" method="POST">
+        <label for="contact-name">Name*</label>
+        <input type="text" id="contact-name" name="Name" required>
+        <label for="contact-email">Email*</label>
+        <input type="email" id="contact-email" name="Email" required>
+        <label for="contact-organization">Organization/Affiliation</label>
+        <input type="text" id="contact-organization" name="Organization">
+        <label for="contact-subject">Subject/Topic</label>
+        <input type="text" id="contact-subject" name="Subject">
+        <label for="contact-category">Category*</label>
+        <select id="contact-category" name="Category">
+          <option value="Global Health">Global Health</option>
+          <option value="Science">Science</option>
+          <option value="Innovation">Innovation</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="contact-message">Message*</label>
+        <textarea id="contact-message" name="Message" rows="4" required></textarea>
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+        <input type="hidden" name="_subject" value="New message from Katia’s site">
+        <input type="hidden" name="_autoresponse" value="Dear {Name},%0A%0AI see you and thank you for connecting.%0A%0AI have received your message regarding {Category} and will get back to you as soon as possible.%0A%0ABest regards,%0AKatia Steinfeld, MD‑PhD">
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha512-vxb7z43Z17rE9tmwXld4s8IH/SNbnscGUuNw3C5IxfW+b7IinRdB4VV7kRCHwHe5LTn7K3QmwbWg8jT6nuW5lA==" crossorigin=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
