@@ -22,27 +22,39 @@ async function fetchExcel(url) {
 
 // Home page: load featured content and reading list
 async function loadFeaturedContent() {
-  try {
-    const items = await fetchExcel('data/featured_content.xlsx');
-    const container = document.getElementById('featured-container');
-    if (!container) return;
-    items.forEach(item => {
+  const container = document.getElementById('featured-container');
+  if (!container) return;
+
+  // Ordered featured articles/posts for homepage
+  const featuredItems = [
+    {
+      order: 1,
+      title: 'How myopia alters visual processing and brain functions | The Sense',
+      description: 'Featured article discussing how myopia influences visual and neural processing pathways.',
+      category: 'Featured Article',
+      linkURL: 'https://www.linkedin.com/feed/update/urn:li:activity:7338115090933510144/',
+      thumbnailURL: 'assets/images/featured-myopia.jpg'
+    }
+  ];
+
+  featuredItems
+    .sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
+    .forEach(item => {
       const card = document.createElement('div');
       card.classList.add('card');
       card.innerHTML = `
-        <img src="${item.ThumbnailURL}" alt="${item.Title}">
+        <a href="${item.linkURL}" target="_blank" rel="noopener noreferrer" aria-label="${item.title}">
+          <img src="${item.thumbnailURL}" alt="${item.title}">
+        </a>
         <div class="card-content">
-          <h3 class="card-title">${item.Title}</h3>
-          <p class="card-description">${item.Description}</p>
-          <span class="badge">${item.Category}</span><br>
-          <a href="${item.LinkURL}" target="_blank" rel="noopener">View</a>
+          <h3 class="card-title">${item.title}</h3>
+          <p class="card-description">${item.description}</p>
+          <span class="badge">${item.category}</span><br>
+          <a href="${item.linkURL}" target="_blank" rel="noopener noreferrer">Read source</a>
         </div>
       `;
       container.appendChild(card);
     });
-  } catch (err) {
-    console.error('Error loading featured content:', err);
-  }
 }
 
 async function loadReadingList() {
