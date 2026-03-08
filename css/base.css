@@ -217,6 +217,32 @@ footer {
   color: var(--muted);
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a,
+.footer-links span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text-light, #e5e7eb);
+}
+
+.footer-links a:hover {
+  background: rgba(127, 178, 255, 0.18);
+  border-color: rgba(127, 178, 255, 0.5);
+}
+
 /* Contact form modal */
 .contact-modal {
   display: none;
