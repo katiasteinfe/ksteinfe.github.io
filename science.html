@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Science – Katia Steinfeld</title>
+  <title>Science â€“ Katia Steinfeld</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap" rel="stylesheet">
   <!-- Leaflet CSS -->
@@ -11,6 +11,7 @@
   <!-- Base and page-specific styles -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/science.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-aJgTyEUMx2j0FX1DYgcdTQAm5Oxd4Y+NHY5QHlKmO4U8y+3n1wF9PdONpIyRUqJkY4JXVkG5Qsx2jgX9fVDdyQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="science-page science-theme">
   <header class="science-theme">
@@ -24,17 +25,23 @@
       </ul>
     </div>
   </header>
+  <div class="container social-strip" aria-label="Contact links">
+    <a class="social-btn" href="https://www.linkedin.com/in/katia-steinfeld/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a class="social-btn" href="mailto:katia.steinfeld@unil.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a class="social-btn" href="https://wa.me/41795507134" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a class="social-btn" href="https://github.com/katiasteinfe" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+  </div>
   <main>
     <section class="science-section container">
       <h2>Research Focus and Expertise</h2>
       <p>
         I study how optical noise, such as myopia and blur, propagates through neural
-        processing to shape perception, decision‑making and action. My current work
-        focuses on designing EEG, eye‑tracking and behavioural experiments to collect datasets across
+        processing to shape perception, decisionâ€‘making and action. My current work
+        focuses on designing EEG, eyeâ€‘tracking and behavioural experiments to collect datasets across
         paediatric and adult populations to uncover developmental trajectories and neural
-        dynamics. I collaborate with multi‑institutional teams on
+        dynamics. I collaborate with multiâ€‘institutional teams on
         analysis standards and implement reproducible pipelines for signal processing,
-        statistical modelling and transformer‑based architectures. 
+        statistical modelling and transformerâ€‘based architectures. 
       </p>
     </section>
     <section class="science-section container">
@@ -48,12 +55,12 @@
           Steinfeld K., Murray M., Carrasco M. (2026). <em> Preserved Exogenous and Endogenous Attention in the Myopic Parafovea</em> (in progress).
         </li>
         <li>
-          Tovar D. A., Kunnath A. J., Steinfeld K., et al. (2026). <em> The role of multisensory integration in child development </em> – Developmental Review (under review).
+          Tovar D. A., Kunnath A. J., Steinfeld K., et al. (2026). <em> The role of multisensory integration in child development </em> â€“ Developmental Review (under review).
         </li>
       </li>
         <li>
           <a href="10.1016/j.neuropsychologia.2025.109180" target="_blank" rel="noopener">
-          Steinfeld K., Murray M. (2025). <em> Cortical Visual Processing Differences in Myopia and Blur </em> – Neuropsychologia.
+          Steinfeld K., Murray M. (2025). <em> Cortical Visual Processing Differences in Myopia and Blur </em> â€“ Neuropsychologia.
     </section>
     <section class="science-section container">
       <h2>Conferences</h2>
@@ -81,7 +88,7 @@
   <li>
     <a href="https://www.snf.ch/en/mJJCOWaE3Pq4esxl/news/twelve-new-md-phd-grants-awarded"
        target="_blank" rel="noopener noreferrer">
-      Competitive MD-PhD grant from the Swiss National Science Foundation (2021–2024)
+      Competitive MD-PhD grant from the Swiss National Science Foundation (2021â€“2024)
     </a>
     for work at the
     <a href="https://www.unil.ch/line/en/home/menuinst/people/katia-steinfeld.html"
@@ -101,7 +108,7 @@
   </main>
   <footer>
     <div class="container">
-      <p>NYC, NY &middot; <a href="mailto:ks7689@nyu.edu">ks7689@nyu.edu</a> &middot; <a href="https://www.linkedin.com/in/katia-steinfeld" target="_blank" rel="noopener">LinkedIn</a></p>
+      <p>NYC, NY &middot; <a href="mailto:katia.steinfeld@unil.com">katia.steinfeld@unil.com</a> &middot; <a href="https://wa.me/41795507134" target="_blank" rel="noopener">WhatsApp</a> &middot; <a href="https://www.linkedin.com/in/katia-steinfeld/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://github.com/katiasteinfe" target="_blank" rel="noopener">GitHub</a></p>
     </div>
   </footer>
   <!-- Contact Modal reuse from index -->
@@ -109,7 +116,7 @@
     <div class="modal-content">
       <button onclick="closeContactModal()" style="float:right; background:none; border:none; font-size:1.2rem;">&times;</button>
       <h3>Contact Me</h3>
-      <form id="contact-form" action="https://formsubmit.co/ks7689@nyu.edu" method="POST">
+      <form id="contact-form" action="https://formsubmit.co/katia.steinfeld@unil.com" method="POST">
         <label for="contact-name">Name*</label>
         <input type="text" id="contact-name" name="Name" required>
         <label for="contact-email">Email*</label>
@@ -127,9 +134,9 @@
         </select>
         <label for="contact-message">Message*</label>
         <textarea id="contact-message" name="Message" rows="4" required></textarea>
-        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-        <input type="hidden" name="_subject" value="New message from Katia’s site">
-        <input type="hidden" name="_autoresponse" value="Dear {Name},%0A%0AI see you and thank you for connecting.%0A%0AI have received your message regarding {Category} and will get back to you as soon as possible.%0A%0ABest regards,%0AKatia Steinfeld, MD‑PhD">
+        <input type="hidden" name="_next" value="https://www.katiasteinfeld.com/">
+        <input type="hidden" name="_subject" value="New message from Katiaâ€™s site">
+        <input type="hidden" name="_autoresponse" value="Dear {Name},%0A%0AI see you and thank you for connecting.%0A%0AI have received your message regarding {Category} and will get back to you as soon as possible.%0A%0ABest regards,%0AKatia Steinfeld, MDâ€‘PhD">
         <button type="submit">Send Message</button>
       </form>
     </div>
@@ -163,3 +170,5 @@
   </section>
 </body>
 </html>
+
+

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Technology – Katia Steinfeld</title>
+  <title>Technology â€“ Katia Steinfeld</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- Leaflet CSS (not used here but included for consistency) -->
@@ -26,12 +26,18 @@
       </ul>
     </div>
   </header>
+  <div class="container social-strip" aria-label="Contact links">
+    <a class="social-btn" href="https://www.linkedin.com/in/katia-steinfeld/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a class="social-btn" href="mailto:katia.steinfeld@unil.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a class="social-btn" href="https://wa.me/41795507134" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a class="social-btn" href="https://github.com/katiasteinfe" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+  </div>
   <main>
     <section class="container" style="padding-top:2rem;">
       <h2>Technology & Innovation</h2>
       <p>
-        I design and deploy cutting‑edge tools that advance neuroscience and
-        vision‑care research. My technical expertise spans Python, MATLAB, R,
+        I design and deploy cuttingâ€‘edge tools that advance neuroscience and
+        visionâ€‘care research. My technical expertise spans Python, MATLAB, R,
         React and Power Apps, along with blockchain solutions and HPC pipelines.
         Below are some highlights from my portfolio.
       </p>
@@ -40,10 +46,10 @@
       <div class="grid grid-two">
         <!-- EEG & Eye-Tracking Platform -->
         <div class="technology-card">
-          <h3>EEG & Eye‑Tracking Signal Processing Platform</h3>
+          <h3>EEG & Eyeâ€‘Tracking Signal Processing Platform</h3>
           <p>
-            A reusable Python and MATLAB pipeline for large‑scale preprocessing and analysis of EEG
-            and eye‑tracking data. Supports phase‑coherence analysis, source reconstruction and mixed‑effects modelling.
+            A reusable Python and MATLAB pipeline for largeâ€‘scale preprocessing and analysis of EEG
+            and eyeâ€‘tracking data. Supports phaseâ€‘coherence analysis, source reconstruction and mixedâ€‘effects modelling.
           </p>
           <span class="technology-badge">Python&nbsp;&nbsp;MATLAB</span>
         </div>
@@ -51,22 +57,22 @@
         <div class="technology-card">
           <h3>Vision Examination Platform</h3>
           <p>
-            A mobile data‑collection app deployed to over 2,000 users for remote and low‑resource environments.
+            A mobile dataâ€‘collection app deployed to over 2,000 users for remote and lowâ€‘resource environments.
           </p>
           <span class="technology-badge">React&nbsp;&nbsp;Bayesian&nbsp;&nbsp;SCRUM</span>
         </div>
         <!-- Blockchain Inventory System -->
         <div class="technology-card">
-          <h3>Blockchain‑Enabled Inventory System</h3>
+          <h3>Blockchainâ€‘Enabled Inventory System</h3>
           <p>
-            An end‑to‑end QR‑based eyeglass inventory and prescription‑tracking platform integrating a Power Apps frontend with a Python
+            An endâ€‘toâ€‘end QRâ€‘based eyeglass inventory and prescriptionâ€‘tracking platform integrating a Power Apps frontend with a Python
             blockchain backend. Enables immutable traceability from prescription to patient delivery.
           </p>
           <span class="technology-badge">Power Apps&nbsp;&nbsp;Python&nbsp;&nbsp;Blockchain</span>
         </div>
-        <!-- Bayesian Vision‑Testing Algorithms -->
+        <!-- Bayesian Visionâ€‘Testing Algorithms -->
         <div class="technology-card">
-          <h3>Bayesian Adaptive Vision‑Testing Algorithms</h3>
+          <h3>Bayesian Adaptive Visionâ€‘Testing Algorithms</h3>
           <p>
             Development of Bayesian and adaptive algorithms (QUEST+) for gamified vision testing,
             ensuring efficient threshold estimation for both children and adults.
@@ -80,14 +86,14 @@
       <p>Core competencies include:</p>
       <ul>
         <li>Programming languages: Python, MATLAB, R, JavaScript/React</li>
-        <li>Application & systems: Power Apps, Python backend integration, blockchain‑based logging</li>
-        <li>Reproducibility: version‑controlled pipelines, Git, SCRUM </li>
+        <li>Application & systems: Power Apps, Python backend integration, blockchainâ€‘based logging</li>
+        <li>Reproducibility: versionâ€‘controlled pipelines, Git, SCRUM </li>
       </ul>
     </section>
   </main>
   <footer>
     <div class="container">
-      <p>NYC, NY &middot; <a href="mailto:ks7689@nyu.edu">ks7689@nyu.edu</a> &middot; <a href="https://www.linkedin.com/in/katia-steinfeld" target="_blank" rel="noopener">LinkedIn</a></p>
+      <p>NYC, NY &middot; <a href="mailto:katia.steinfeld@unil.com">katia.steinfeld@unil.com</a> &middot; <a href="https://wa.me/41795507134" target="_blank" rel="noopener">WhatsApp</a> &middot; <a href="https://www.linkedin.com/in/katia-steinfeld/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://github.com/katiasteinfe" target="_blank" rel="noopener">GitHub</a></p>
     </div>
   </footer>
   <!-- Contact Modal reuse from index -->
@@ -95,7 +101,7 @@
     <div class="modal-content">
       <button onclick="closeContactModal()" style="float:right; background:none; border:none; font-size:1.2rem;">&times;</button>
       <h3>Contact Me</h3>
-      <form id="contact-form" action="https://formsubmit.co/ks7689@nyu.edu" method="POST">
+      <form id="contact-form" action="https://formsubmit.co/katia.steinfeld@unil.com" method="POST">
         <label for="contact-name">Name*</label>
         <input type="text" id="contact-name" name="Name" required>
         <label for="contact-email">Email*</label>
@@ -113,9 +119,9 @@
         </select>
         <label for="contact-message">Message*</label>
         <textarea id="contact-message" name="Message" rows="4" required></textarea>
-        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-        <input type="hidden" name="_subject" value="New message from Katia’s site">
-        <input type="hidden" name="_autoresponse" value="Dear {Name},%0A%0AI see you and thank you for connecting.%0A%0AI have received your message regarding {Category} and will get back to you as soon as possible.%0A%0ABest regards,%0AKatia Steinfeld, MD‑PhD">
+        <input type="hidden" name="_next" value="https://www.katiasteinfeld.com/">
+        <input type="hidden" name="_subject" value="New message from Katiaâ€™s site">
+        <input type="hidden" name="_autoresponse" value="Dear {Name},%0A%0AI see you and thank you for connecting.%0A%0AI have received your message regarding {Category} and will get back to you as soon as possible.%0A%0ABest regards,%0AKatia Steinfeld, MDâ€‘PhD">
         <button type="submit">Send Message</button>
       </form>
     </div>
@@ -149,3 +155,5 @@
   </section>
 </body>
 </html>
+
+

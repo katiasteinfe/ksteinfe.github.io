@@ -316,7 +316,62 @@ footer {
   }
 }
 
+/* Social strip buttons */
+.social-strip {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1rem 0 0.25rem;
+}
+
+.social-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(127, 178, 255, 0.18);
+  border-color: rgba(127, 178, 255, 0.5);
+  color: var(--text);
+}
+
 /* Category icons section */
 .connect-icons {
   display: flex;
-  justify-c
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.connect-icon {
+  min-width: 120px;
+  padding: 0.9rem 0.8rem;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background-color: rgba(255, 255, 255, 0.03);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.connect-icon:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.connect-icon span {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
