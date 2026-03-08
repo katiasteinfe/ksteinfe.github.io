@@ -29,11 +29,59 @@ async function loadFeaturedContent() {
   const featuredItems = [
     {
       order: 1,
-      title: 'How myopia alters visual processing and brain functions | The Sense',
-      description: 'Featured article discussing how myopia influences visual and neural processing pathways.',
+      title: '2025 FoVea Travel and Networking Awardees',
+      description: 'Recognition by FoVea for travel and networking in vision science.',
+      category: 'Award',
+      linkURL: 'https://www.foveavision.org/awards/fovea-travel-and-networking-award',
+      thumbnailURL: 'assets/images/featured-fovea.jpg'
+    },
+    {
+      order: 2,
+      title: 'At the Crossroads of Science and Entrepreneurship',
+      description: 'Feature on science, innovation, and entrepreneurship collaboration.',
       category: 'Featured Article',
-      linkURL: 'https://www.linkedin.com/feed/update/urn:li:activity:7338115090933510144/',
-      thumbnailURL: 'assets/images/featured-myopia.jpg'
+      linkURL: 'https://www.linkedin.com/company/the-sense-initiative/',
+      thumbnailURL: 'assets/images/featured-crossroads.jpg'
+    },
+    {
+      order: 3,
+      title: 'First Edition of The Sense’s Retreat',
+      description: 'Highlight from The Sense retreat and research showcase.',
+      category: 'Event',
+      linkURL: 'https://www.linkedin.com/company/the-sense-initiative/',
+      thumbnailURL: 'assets/images/featured-sense-retreat.jpg'
+    },
+    {
+      order: 4,
+      title: 'Brain Health: Where Do We Go From Here?',
+      description: 'Panel discussion on implications of neuroscience for education, policy, and accessibility.',
+      category: 'Panel',
+      linkURL: 'https://www.swissnex.org/boston/news/brain-health-where-do-we-go-from-here/',
+      thumbnailURL: 'assets/images/featured-brain-health.jpg'
+    },
+    {
+      order: 5,
+      title: 'Grateful to Be Part of #CGIU2017',
+      description: 'From the Clinton Global Initiative University experience and student impact network.',
+      category: 'Community',
+      linkURL: 'https://www.linkedin.com/in/katia-steinfeld/',
+      thumbnailURL: 'assets/images/featured-cgiu.jpg'
+    },
+    {
+      order: 6,
+      title: 'A Swiss Abroad Talks About Studying Medicine in Switzerland',
+      description: 'Profile feature on studying medicine and career development in Switzerland.',
+      category: 'Interview',
+      linkURL: 'https://www.swisscommunity.org/en/news-media/swiss-revue/article/a-swiss-abroad-talks-about-studying-medicine-in-switzerland',
+      thumbnailURL: 'assets/images/featured-swiss-abroad.jpg'
+    },
+    {
+      order: 7,
+      title: 'Escolhares Back in Brazil',
+      description: 'Program spotlight on Escolhares and cross-border collaboration in Brazil.',
+      category: 'Global Health',
+      linkURL: 'https://swissnex.org/brazil/',
+      thumbnailURL: 'assets/images/featured-escolhares-brazil.jpg'
     }
   ];
 
