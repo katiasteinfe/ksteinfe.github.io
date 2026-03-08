@@ -82,6 +82,14 @@ async function loadFeaturedContent() {
       category: 'Global Health',
       linkURL: 'https://swissnex.org/brazil/',
       thumbnailURL: 'assets/images/featured-escolhares-brazil.jpg'
+    },
+    {
+      order: 8,
+      title: 'How Myopia Alters Visual Processing and Brain Functions',
+      description: 'Featured discussion on myopia, visual processing, and neural function.',
+      category: 'Featured Article',
+      linkURL: 'https://www.linkedin.com/feed/update/urn:li:activity:7338115090933510144/',
+      thumbnailURL: 'assets/images/featured-myopia.jpg'
     }
   ];
 
