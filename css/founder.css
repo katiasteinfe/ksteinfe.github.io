@@ -85,6 +85,28 @@ header.founder-theme {
   color: #00395d;
 }
 
+/* Impact visual substitute block */
+.impact-visual-card {
+  background: #fff;
+  border: 1px solid #d6e8f3;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.impact-visual {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.impact-caption {
+  padding: 0.75rem 0.95rem;
+  color: #1f3f5a;
+  font-size: 0.92rem;
+}
+
 /* Founder content cards */
 .founder-detail-grid {
   margin-top: 1.1rem;
