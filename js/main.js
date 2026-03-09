@@ -169,16 +169,16 @@ async function loadScienceMap() {
   if (!mapContainer) return;
 
   const collaborationFallback = [
-    { Name: 'Vanderbilt University', City: 'Nashville, USA', Latitude: 36.1447, Longitude: -86.8027 },
-    { Name: 'Yale University', City: 'New Haven, USA', Latitude: 41.3163, Longitude: -72.9223 },
-    { Name: 'NYU', City: 'New York, USA', Latitude: 40.7295, Longitude: -73.9965 },
-    { Name: 'Swissnex', City: 'Boston, USA', Latitude: 42.3601, Longitude: -71.0589 },
-    { Name: 'Swissnex', City: 'Rio de Janeiro, Brazil', Latitude: -22.9068, Longitude: -43.1729 },
-    { Name: 'Escolhares', City: 'Rio de Janeiro, Brazil', Latitude: -22.9068, Longitude: -43.1729 },
-    { Name: 'University of Iceland', City: 'Reykjavik, Iceland', Latitude: 64.1466, Longitude: -21.9426 },
-    { Name: 'UNIL Lausanne', City: 'Lausanne, Switzerland', Latitude: 46.5197, Longitude: 6.6323 },
-    { Name: 'The Sense', City: 'Lausanne, Switzerland', Latitude: 46.5197, Longitude: 6.6323 },
-    { Name: 'Moorfields', City: 'London, UK', Latitude: 51.5220, Longitude: -0.0883 }
+    { Name: 'Vanderbilt University', City: 'Nashville, USA', Latitude: 36.1447, Longitude: -86.8027, LinkURL: 'https://www.vanderbilt.edu/' },
+    { Name: 'Yale University', City: 'New Haven, USA', Latitude: 41.3163, Longitude: -72.9223, LinkURL: 'https://www.yale.edu/' },
+    { Name: 'NYU', City: 'New York, USA', Latitude: 40.7295, Longitude: -73.9965, LinkURL: 'https://www.nyu.edu/' },
+    { Name: 'Swissnex', City: 'Boston, USA', Latitude: 42.3601, Longitude: -71.0589, LinkURL: 'https://www.swissnex.org/boston/' },
+    { Name: 'Swissnex', City: 'Rio de Janeiro, Brazil', Latitude: -22.9068, Longitude: -43.1729, LinkURL: 'https://swissnex.org/brazil/' },
+    { Name: 'Escolhares', City: 'Rio de Janeiro, Brazil', Latitude: -22.9068, Longitude: -43.1729, LinkURL: 'https://www.escolhares.com/en' },
+    { Name: 'University of Iceland', City: 'Reykjavik, Iceland', Latitude: 64.1466, Longitude: -21.9426, LinkURL: 'https://english.hi.is/' },
+    { Name: 'UNIL Lausanne', City: 'Lausanne, Switzerland', Latitude: 46.5197, Longitude: 6.6323, LinkURL: 'https://www.unil.ch/index.html' },
+    { Name: 'The Sense', City: 'Lausanne, Switzerland', Latitude: 46.5197, Longitude: 6.6323, LinkURL: 'https://www.linkedin.com/company/the-sense-initiative/' },
+    { Name: 'Moorfields', City: 'London, UK', Latitude: 51.5220, Longitude: -0.0883, LinkURL: 'https://www.moorfields.nhs.uk/' }
   ];
 
   const map = L.map(mapContainer, { worldCopyJump: true }).setView([27, 1], 2);
@@ -206,6 +206,7 @@ async function loadScienceMap() {
 
     const label = item.Name || item.Organization || 'Collaboration';
     const location = item.City || item.Location || item.Description || '';
+    const link = item.LinkURL || item.URL || item.Website || '';
 
     const marker = L.circleMarker([lat, lng], {
       radius: 7,
@@ -215,7 +216,11 @@ async function loadScienceMap() {
       fillOpacity: 0.9
     }).addTo(map);
 
-    marker.bindPopup(`<strong>${label}</strong><br>${location}`);
+    const popupHtml = link
+      ? `<strong>${label}</strong><br>${location}<br><a href="${link}" target="_blank" rel="noopener noreferrer">Visit collaborator</a>`
+      : `<strong>${label}</strong><br>${location}`;
+
+    marker.bindPopup(popupHtml);
     bounds.push([lat, lng]);
 
     if (listContainer) {
