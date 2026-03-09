@@ -22,27 +22,95 @@ async function fetchExcel(url) {
 
 // Home page: load featured content and reading list
 async function loadFeaturedContent() {
-  try {
-    const items = await fetchExcel('data/featured_content.xlsx');
-    const container = document.getElementById('featured-container');
-    if (!container) return;
-    items.forEach(item => {
+  const container = document.getElementById('featured-container');
+  if (!container) return;
+
+  // Ordered featured articles/posts for homepage
+  const featuredItems = [
+    {
+      order: 1,
+      title: '2025 FoVea Travel and Networking Awardees',
+      description: 'Recognition by FoVea for travel and networking in vision science.',
+      category: 'Award',
+      linkURL: 'https://www.foveavision.org/awards/fovea-travel-and-networking-award',
+      thumbnailURL: 'assets/images/featured-fovea.jpg'
+    },
+    {
+      order: 2,
+      title: 'At the Crossroads of Science and Entrepreneurship',
+      description: 'Feature on science, innovation, and entrepreneurship collaboration.',
+      category: 'Featured Article',
+      linkURL: 'https://www.linkedin.com/company/the-sense-initiative/',
+      thumbnailURL: 'assets/images/featured-crossroads.jpg'
+    },
+    {
+      order: 3,
+      title: 'First Edition of The Sense’s Retreat',
+      description: 'Highlight from The Sense retreat and research showcase.',
+      category: 'Event',
+      linkURL: 'https://www.linkedin.com/company/the-sense-initiative/',
+      thumbnailURL: 'assets/images/featured-sense-retreat.jpg'
+    },
+    {
+      order: 4,
+      title: 'Brain Health: Where Do We Go From Here?',
+      description: 'Panel discussion on implications of neuroscience for education, policy, and accessibility.',
+      category: 'Panel',
+      linkURL: 'https://www.swissnex.org/boston/news/brain-health-where-do-we-go-from-here/',
+      thumbnailURL: 'assets/images/featured-brain-health.jpg'
+    },
+    {
+      order: 5,
+      title: 'Grateful to Be Part of #CGIU2017',
+      description: 'From the Clinton Global Initiative University experience and student impact network.',
+      category: 'Community',
+      linkURL: 'https://www.linkedin.com/in/katia-steinfeld/',
+      thumbnailURL: 'assets/images/featured-cgiu.jpg'
+    },
+    {
+      order: 6,
+      title: 'A Swiss Abroad Talks About Studying Medicine in Switzerland',
+      description: 'Profile feature on studying medicine and career development in Switzerland.',
+      category: 'Interview',
+      linkURL: 'https://www.swisscommunity.org/en/news-media/swiss-revue/article/a-swiss-abroad-talks-about-studying-medicine-in-switzerland',
+      thumbnailURL: 'assets/images/featured-swiss-abroad.jpg'
+    },
+    {
+      order: 7,
+      title: 'Escolhares Back in Brazil',
+      description: 'Program spotlight on Escolhares and cross-border collaboration in Brazil.',
+      category: 'Global Health',
+      linkURL: 'https://swissnex.org/brazil/',
+      thumbnailURL: 'assets/images/featured-escolhares-brazil.jpg'
+    },
+    {
+      order: 8,
+      title: 'How Myopia Alters Visual Processing and Brain Functions',
+      description: 'Featured discussion on myopia, visual processing, and neural function.',
+      category: 'Featured Article',
+      linkURL: 'https://www.linkedin.com/feed/update/urn:li:activity:7338115090933510144/',
+      thumbnailURL: 'assets/images/featured-myopia.jpg'
+    }
+  ];
+
+  featuredItems
+    .sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
+    .forEach(item => {
       const card = document.createElement('div');
       card.classList.add('card');
       card.innerHTML = `
-        <img src="${item.ThumbnailURL}" alt="${item.Title}">
+        <a href="${item.linkURL}" target="_blank" rel="noopener noreferrer" aria-label="${item.title}">
+          <img src="${item.thumbnailURL}" alt="${item.title}">
+        </a>
         <div class="card-content">
-          <h3 class="card-title">${item.Title}</h3>
-          <p class="card-description">${item.Description}</p>
-          <span class="badge">${item.Category}</span><br>
-          <a href="${item.LinkURL}" target="_blank" rel="noopener">View</a>
+          <h3 class="card-title">${item.title}</h3>
+          <p class="card-description">${item.description}</p>
+          <span class="badge">${item.category}</span><br>
+          <a href="${item.linkURL}" target="_blank" rel="noopener noreferrer">Read source</a>
         </div>
       `;
       container.appendChild(card);
     });
-  } catch (err) {
-    console.error('Error loading featured content:', err);
-  }
 }
 
 async function loadReadingList() {
