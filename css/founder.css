@@ -117,6 +117,43 @@ header.founder-theme {
   color: #1f3f5a;
 }
 
+.doc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.8rem 0 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.doc-list li {
+  background: #fff;
+  border: 1px solid #d6e8f3;
+  border-radius: 10px;
+  padding: 0.8rem 0.95rem;
+  color: #1f3f5a;
+}
+
+.doc-list a {
+  color: #0079ad;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.doc-list a:hover { text-decoration: underline; }
+
+.founder-links { margin-top: 0.6rem; }
+.founder-link-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 0.7rem; }
+.founder-link-btn {
+  display: inline-block;
+  background: #0079ad;
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  text-decoration: none !important;
+  font-weight: 700;
+}
+.founder-link-btn:hover { filter: brightness(1.05); }
+
 @media (max-width: 900px) {
   .founder-detail-grid { grid-template-columns: 1fr; }
 }

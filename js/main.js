@@ -203,15 +203,37 @@ async function loadFounderMaps() {
 async function loadDocuments() {
   const container = document.getElementById('documents-list');
   if (!container) return;
+
+  const fallbackDocs = [
+    {
+      Title: 'Escolhares Official Website',
+      LinkURL: 'https://www.escolhares.com/en',
+      Description: 'Program overview, mission, and impact updates'
+    },
+    {
+      Title: 'Escolhares Instagram',
+      LinkURL: 'https://instagram.com/escolhares',
+      Description: 'Latest field activities, community stories, and events'
+    }
+  ];
+
   try {
-    const docs = await fetchExcel('data/escolhares_documents.xlsx');
-    docs.forEach(doc => {
+    const docsRaw = await fetchExcel('data/escolhares_documents.xlsx');
+    const docs = docsRaw.filter(doc => doc?.Title && doc?.LinkURL && !String(doc.LinkURL).includes('example.com'));
+    const finalDocs = docs.length ? docs : fallbackDocs;
+
+    finalDocs.forEach(doc => {
       const li = document.createElement('li');
-      li.innerHTML = `<a href="${doc.LinkURL}" target="_blank" rel="noopener">${doc.Title}</a> - ${doc.Description}`;
+      li.innerHTML = `<a href="${doc.LinkURL}" target="_blank" rel="noopener noreferrer">${doc.Title}</a><div>${doc.Description || ''}</div>`;
       container.appendChild(li);
     });
   } catch (err) {
     console.error('Error loading documents:', err);
+    fallbackDocs.forEach(doc => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${doc.LinkURL}" target="_blank" rel="noopener noreferrer">${doc.Title}</a><div>${doc.Description || ''}</div>`;
+      container.appendChild(li);
+    });
   }
 }
 
