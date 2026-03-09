@@ -49,3 +49,31 @@ header.science-theme {
   border: 1px solid var(--border);
   border-radius: var(--r-md);
 }
+
+.map-help {
+  margin: 0.4rem 0 0.9rem;
+  font-size: 0.9rem;
+}
+
+.collab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.collab-item {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.32rem 0.75rem;
+  font-size: 0.87rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.collab-item:hover,
+.collab-item.active {
+  border-color: var(--accent);
+  background: rgba(127, 178, 255, 0.16);
+}

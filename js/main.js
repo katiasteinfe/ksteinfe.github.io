@@ -167,17 +167,83 @@ async function loadReadingList() {
 async function loadScienceMap() {
   const mapContainer = document.getElementById('science-map');
   if (!mapContainer) return;
-  // Create map with grayscale tiles
-  const map = L.map(mapContainer).setView([20, 0], 2);
+
+  const collaborationFallback = [
+    { Name: 'Vanderbilt University', City: 'Nashville, USA', Latitude: 36.1447, Longitude: -86.8027 },
+    { Name: 'Yale University', City: 'New Haven, USA', Latitude: 41.3163, Longitude: -72.9223 },
+    { Name: 'NYU', City: 'New York, USA', Latitude: 40.7295, Longitude: -73.9965 },
+    { Name: 'Swissnex', City: 'Boston, USA', Latitude: 42.3601, Longitude: -71.0589 },
+    { Name: 'Swissnex', City: 'Rio de Janeiro, Brazil', Latitude: -22.9068, Longitude: -43.1729 },
+    { Name: 'Escolhares', City: 'Rio de Janeiro, Brazil', Latitude: -22.9068, Longitude: -43.1729 },
+    { Name: 'University of Iceland', City: 'Reykjavik, Iceland', Latitude: 64.1466, Longitude: -21.9426 },
+    { Name: 'UNIL Lausanne', City: 'Lausanne, Switzerland', Latitude: 46.5197, Longitude: 6.6323 },
+    { Name: 'The Sense', City: 'Lausanne, Switzerland', Latitude: 46.5197, Longitude: 6.6323 },
+    { Name: 'Moorfields', City: 'London, UK', Latitude: 51.5220, Longitude: -0.0883 }
+  ];
+
+  const map = L.map(mapContainer, { worldCopyJump: true }).setView([27, 1], 2);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
   }).addTo(map);
-  // Load data
-  const items = await fetchExcel('data/science_collaborations.xlsx');
-  items.forEach(item => {
-    const marker = L.marker([item.Latitude, item.Longitude]).addTo(map);
-    marker.bindPopup(`<strong>${item.Name}</strong><br>${item.Description}`);
+
+  let items = collaborationFallback;
+  try {
+    const excelItems = await fetchExcel('data/science_collaborations.xlsx');
+    if (Array.isArray(excelItems) && excelItems.length) {
+      items = excelItems;
+    }
+  } catch (err) {
+    console.warn('Using fallback science collaborations list:', err);
+  }
+
+  const listContainer = document.getElementById('collab-list');
+  const bounds = [];
+
+  items.forEach((item, i) => {
+    const lat = Number(item.Latitude);
+    const lng = Number(item.Longitude);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+
+    const label = item.Name || item.Organization || 'Collaboration';
+    const location = item.City || item.Location || item.Description || '';
+
+    const marker = L.circleMarker([lat, lng], {
+      radius: 7,
+      color: '#7fb2ff',
+      weight: 2,
+      fillColor: '#2f6fd6',
+      fillOpacity: 0.9
+    }).addTo(map);
+
+    marker.bindPopup(`<strong>${label}</strong><br>${location}`);
+    bounds.push([lat, lng]);
+
+    if (listContainer) {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'collab-item';
+      chip.textContent = `${label}${location ? ` (${location})` : ''}`;
+      chip.addEventListener('mouseenter', () => {
+        chip.classList.add('active');
+        marker.setStyle({ fillColor: '#8fd694', color: '#8fd694' });
+      });
+      chip.addEventListener('mouseleave', () => {
+        chip.classList.remove('active');
+        marker.setStyle({ fillColor: '#2f6fd6', color: '#7fb2ff' });
+      });
+      chip.addEventListener('click', () => {
+        map.flyTo([lat, lng], Math.max(map.getZoom(), 5), { duration: 0.6 });
+        marker.openPopup();
+      });
+      listContainer.appendChild(chip);
+    }
   });
+
+  if (bounds.length) {
+    map.fitBounds(bounds, { padding: [40, 40] });
+  }
+
+  setTimeout(() => map.invalidateSize(), 150);
 }
 
 // Founder page: initialise maps for schools, glasses and app users
