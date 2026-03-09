@@ -179,6 +179,31 @@ header.founder-theme {
 }
 .founder-link-btn:hover { filter: brightness(1.05); }
 
+.founder-page .cta-panel {
+  background: #e9f3fb;
+  border: 1px solid #cfe1ef;
+}
+
+.founder-page .cta-panel h3,
+.founder-page .cta-panel p {
+  color: #1f3f5a;
+}
+
+.founder-ig-btn {
+  width: 56px;
+  height: 56px;
+  font-size: 1.45rem;
+  background: #ffffff;
+  color: #0079ad !important;
+  border: 2px solid #7fc3e4;
+}
+
+.founder-ig-btn:hover {
+  background: #f1fbff;
+  border-color: #44a8d6;
+  color: #006b99 !important;
+}
+
 @media (max-width: 900px) {
   .founder-detail-grid { grid-template-columns: 1fr; }
 }
