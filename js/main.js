@@ -186,6 +186,32 @@ async function loadScienceMap() {
     attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
   }).addTo(map);
 
+  const regionStyles = {
+    USA: { stroke: '#4da3ff', fill: '#2f6fd6', hover: '#8fd694' },
+    Europe: { stroke: '#b28bff', fill: '#7e57c2', hover: '#8fd694' },
+    Brazil: { stroke: '#69d38c', fill: '#2fa86e', hover: '#ffd166' },
+    Other: { stroke: '#9aa7bd', fill: '#6b7a91', hover: '#8fd694' }
+  };
+
+  function inferRegion(locationText = '') {
+    const v = String(locationText).toLowerCase();
+    if (v.includes('brazil') || v.includes('rio')) return 'Brazil';
+    if (v.includes('usa') || v.includes('new york') || v.includes('nashville') || v.includes('new haven') || v.includes('boston')) return 'USA';
+    if (v.includes('switzerland') || v.includes('lausanne') || v.includes('iceland') || v.includes('reykjavik') || v.includes('uk') || v.includes('london')) return 'Europe';
+    return 'Other';
+  }
+
+  const legendEl = document.getElementById('collab-legend');
+  if (legendEl) {
+    ['USA', 'Europe', 'Brazil'].forEach(region => {
+      const style = regionStyles[region];
+      const el = document.createElement('div');
+      el.className = 'legend-item';
+      el.innerHTML = `<span class="legend-dot" style="background:${style.fill}; border:1px solid ${style.stroke};"></span>${region}`;
+      legendEl.appendChild(el);
+    });
+  }
+
   let items = collaborationFallback;
   try {
     const excelItems = await fetchExcel('data/science_collaborations.xlsx');
@@ -208,11 +234,14 @@ async function loadScienceMap() {
     const location = item.City || item.Location || item.Description || '';
     const link = item.LinkURL || item.URL || item.Website || '';
 
+    const region = inferRegion(location);
+    const palette = regionStyles[region] || regionStyles.Other;
+
     const marker = L.circleMarker([lat, lng], {
       radius: 7,
-      color: '#7fb2ff',
+      color: palette.stroke,
       weight: 2,
-      fillColor: '#2f6fd6',
+      fillColor: palette.fill,
       fillOpacity: 0.9
     }).addTo(map);
 
@@ -230,11 +259,11 @@ async function loadScienceMap() {
       chip.textContent = `${label}${location ? ` (${location})` : ''}`;
       chip.addEventListener('mouseenter', () => {
         chip.classList.add('active');
-        marker.setStyle({ fillColor: '#8fd694', color: '#8fd694' });
+        marker.setStyle({ fillColor: palette.hover, color: palette.hover });
       });
       chip.addEventListener('mouseleave', () => {
         chip.classList.remove('active');
-        marker.setStyle({ fillColor: '#2f6fd6', color: '#7fb2ff' });
+        marker.setStyle({ fillColor: palette.fill, color: palette.stroke });
       });
       chip.addEventListener('click', () => {
         map.flyTo([lat, lng], Math.max(map.getZoom(), 5), { duration: 0.6 });
