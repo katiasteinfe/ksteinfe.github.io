@@ -37,8 +37,8 @@ header.founder-theme {
 }
 
 .founder-inline-avatar {
-  width: 36px;
-  height: 36px;
+  width: 63px;
+  height: 63px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #c7dff0;
@@ -46,7 +46,7 @@ header.founder-theme {
 
 .founder-inline-label {
   display: inline-block;
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -99,8 +99,9 @@ header.founder-theme {
 
 .impact-visual {
   width: 100%;
-  max-height: 360px;
-  object-fit: cover;
+  max-height: 520px;
+  object-fit: contain;
+  background: #ffffff;
   display: block;
 }
 
@@ -225,7 +226,7 @@ header.founder-theme {
 }
 
 .founder-logo {
-  max-width: 220px;
+  max-width: 275px;
   width: 100%;
   height: auto;
   opacity: 0.95;
