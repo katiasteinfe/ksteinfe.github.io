@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Technology – Katia Steinfeld</title>
+  <title>Technology - Katia Steinfeld</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- Leaflet CSS (not used here but included for consistency) -->
@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/technology.css">
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-aJgTyEUMx2j0FX1DYgcdTQAm5Oxd4Y+NHY5QHlKmO4U8y+3n1wF9PdONpIyRUqJkY4JXVkG5Qsx2jgX9fVDdyQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body class="technology-page technology-theme">
   <header class="technology-theme">
@@ -26,12 +27,18 @@
       </ul>
     </div>
   </header>
+  <div class="container social-strip" aria-label="Contact links">
+    <a class="social-btn" href="https://www.linkedin.com/in/katia-steinfeld/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a class="social-btn" href="mailto:katia.steinfeld@unil.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a class="social-btn" href="https://wa.me/41795507134" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a class="social-btn" href="https://github.com/katiasteinfe" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+  </div>
   <main>
     <section class="container" style="padding-top:2rem;">
       <h2>Technology & Innovation</h2>
       <p>
-        I design and deploy cutting‑edge tools that advance neuroscience and
-        vision‑care research. My technical expertise spans Python, MATLAB, R,
+        I design and deploy cutting-edge tools that advance neuroscience and
+        vision-care research. My technical expertise spans Python, MATLAB, R,
         React and Power Apps, along with blockchain solutions and HPC pipelines.
         Below are some highlights from my portfolio.
       </p>
@@ -40,10 +47,10 @@
       <div class="grid grid-two">
         <!-- EEG & Eye-Tracking Platform -->
         <div class="technology-card">
-          <h3>EEG & Eye‑Tracking Signal Processing Platform</h3>
+          <h3>EEG & Eye-Tracking Signal Processing Platform</h3>
           <p>
-            A reusable Python and MATLAB pipeline for large‑scale preprocessing and analysis of EEG
-            and eye‑tracking data. Supports phase‑coherence analysis, source reconstruction and mixed‑effects modelling.
+            A reusable Python and MATLAB pipeline for large-scale preprocessing and analysis of EEG
+            and eye-tracking data. Supports phase-coherence analysis, source reconstruction and mixed-effects modelling.
           </p>
           <span class="technology-badge">Python&nbsp;&nbsp;MATLAB</span>
         </div>
@@ -51,22 +58,22 @@
         <div class="technology-card">
           <h3>Vision Examination Platform</h3>
           <p>
-            A mobile data‑collection app deployed to over 2,000 users for remote and low‑resource environments.
+            A mobile data-collection app deployed to over 2,000 users for remote and low-resource environments.
           </p>
           <span class="technology-badge">React&nbsp;&nbsp;Bayesian&nbsp;&nbsp;SCRUM</span>
         </div>
         <!-- Blockchain Inventory System -->
         <div class="technology-card">
-          <h3>Blockchain‑Enabled Inventory System</h3>
+          <h3>Blockchain-Enabled Inventory System</h3>
           <p>
-            An end‑to‑end QR‑based eyeglass inventory and prescription‑tracking platform integrating a Power Apps frontend with a Python
+            An end-to-end QR-based eyeglass inventory and prescription-tracking platform integrating a Power Apps frontend with a Python
             blockchain backend. Enables immutable traceability from prescription to patient delivery.
           </p>
           <span class="technology-badge">Power Apps&nbsp;&nbsp;Python&nbsp;&nbsp;Blockchain</span>
         </div>
-        <!-- Bayesian Vision‑Testing Algorithms -->
+        <!-- Bayesian Vision-Testing Algorithms -->
         <div class="technology-card">
-          <h3>Bayesian Adaptive Vision‑Testing Algorithms</h3>
+          <h3>Bayesian Adaptive Vision-Testing Algorithms</h3>
           <p>
             Development of Bayesian and adaptive algorithms (QUEST+) for gamified vision testing,
             ensuring efficient threshold estimation for both children and adults.
@@ -80,14 +87,19 @@
       <p>Core competencies include:</p>
       <ul>
         <li>Programming languages: Python, MATLAB, R, JavaScript/React</li>
-        <li>Application & systems: Power Apps, Python backend integration, blockchain‑based logging</li>
-        <li>Reproducibility: version‑controlled pipelines, Git, SCRUM </li>
+        <li>Application & systems: Power Apps, Python backend integration, blockchain-based logging</li>
+        <li>Reproducibility: version-controlled pipelines, Git, SCRUM </li>
       </ul>
     </section>
+
+    <section class="container cta-panel">
+      <h3>Innovation Partnerships</h3>
+      <p>Open to collaborations in data pipelines, digital health tooling, applied neuroscience, and scalable vision-care technology deployments.</p>
+    </section>
   </main>
-  <footer>
+    <footer>
     <div class="container">
-      <p>NYC, NY &middot; <a href="mailto:ks7689@nyu.edu">ks7689@nyu.edu</a> &middot; <a href="https://www.linkedin.com/in/katia-steinfeld" target="_blank" rel="noopener">LinkedIn</a></p>
+      <p>© 2026 Katia Steinfeld</p>
     </div>
   </footer>
   <!-- Contact Modal reuse from index -->
@@ -95,7 +107,7 @@
     <div class="modal-content">
       <button onclick="closeContactModal()" style="float:right; background:none; border:none; font-size:1.2rem;">&times;</button>
       <h3>Contact Me</h3>
-      <form id="contact-form" action="https://formsubmit.co/ks7689@nyu.edu" method="POST">
+      <form id="contact-form" action="https://formsubmit.co/katia.steinfeld@unil.com" method="POST">
         <label for="contact-name">Name*</label>
         <input type="text" id="contact-name" name="Name" required>
         <label for="contact-email">Email*</label>
@@ -113,9 +125,9 @@
         </select>
         <label for="contact-message">Message*</label>
         <textarea id="contact-message" name="Message" rows="4" required></textarea>
-        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-        <input type="hidden" name="_subject" value="New message from Katia’s site">
-        <input type="hidden" name="_autoresponse" value="Dear {Name},%0A%0AI see you and thank you for connecting.%0A%0AI have received your message regarding {Category} and will get back to you as soon as possible.%0A%0ABest regards,%0AKatia Steinfeld, MD‑PhD">
+        <input type="hidden" name="_next" value="https://www.katiasteinfeld.com/">
+        <input type="hidden" name="_subject" value="New message from Katia's site">
+        <input type="hidden" name="_autoresponse" value="Dear {Name},%0A%0AI see you and thank you for connecting.%0A%0AI have received your message regarding {Category} and will get back to you as soon as possible.%0A%0ABest regards,%0AKatia Steinfeld, MD-PhD">
         <button type="submit">Send Message</button>
       </form>
     </div>
@@ -124,28 +136,16 @@
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha512-vxb7z43Z17rE9tmwXld4s8IH/SNbnscGUuNw3C5IxfW+b7IinRdB4VV7kRCHwHe5LTn7K3QmwbWg8jT6nuW5lA==" crossorigin=""></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script src="js/main.js"></script>
-  <!-- Connect icons -->
-  <section class="container" style="margin-top:2rem;">
-    <h2>Connect</h2>
-    <p>Have a technology project in mind or want to collaborate? Reach out:</p>
-    <div class="connect-icons">
-      <div class="connect-icon" onclick="openContactModal('Global Health')">
-        <i class="fa-solid fa-globe fa-2x" style="color:#6a3386;"></i>
-        <span>Global Health</span>
-      </div>
-      <div class="connect-icon" onclick="openContactModal('Science')">
-        <i class="fa-solid fa-brain fa-2x" style="color:#6a3386;"></i>
-        <span>Science</span>
-      </div>
-      <div class="connect-icon" onclick="openContactModal('Innovation')">
-        <i class="fa-solid fa-lightbulb fa-2x" style="color:#6a3386;"></i>
-        <span>Innovation</span>
-      </div>
-      <div class="connect-icon" onclick="openContactModal('Other')">
-        <i class="fa-solid fa-comments fa-2x" style="color:#6a3386;"></i>
-        <span>Other</span>
-      </div>
-    </div>
-  </section>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
