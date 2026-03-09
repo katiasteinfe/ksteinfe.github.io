@@ -31,24 +31,27 @@ header.founder-theme {
 .founder-inline-id {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
   margin-bottom: 0.7rem;
 }
 
 .founder-inline-avatar {
-  width: 54px;
-  height: 54px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #c7dff0;
 }
 
 .founder-inline-label {
+  display: inline-block;
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #1f5a7d;
+  line-height: 1;
 }
 
 /* Headings coloured with primary accent */
