@@ -29,6 +29,14 @@ async function loadFeaturedContent() {
   const featuredItems = [
     {
       order: 1,
+      title: 'Invited Symposia — Cognitive Neuroscience Society 2026',
+      description: 'Featured invited symposia listing for CNS 2026 in Vancouver.',
+      category: 'Science',
+      linkURL: 'https://www.cogneurosociety.org/invited-symposia/?sym=86',
+      thumbnailURL: 'assets/images/featured-cns-2026.jpg'
+    },
+    {
+      order: 2,
       title: '2025 FoVea Travel and Networking Awardees',
       description: 'Recognition by FoVea for travel and networking in vision science.',
       category: 'Award',
